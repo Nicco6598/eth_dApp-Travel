@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 import '../../src/style.css';
+import WalletBalance from './WalletBalance';
 
 const providerOptions = {
   /* qui puoi inserire altri provider se necessario */
@@ -52,17 +53,19 @@ const ConnectWalletButton = () => {
   };
 
   return (
-    <div>
-      {!account ? (
-        <button onClick={connectWallet}>Connect Wallet</button>
-      ) : (
-        <div>
-          <div>
-            Wallet: {account.substring(0, 6)}...
-            {account.substring(account.length - 4)}
-          </div>
-          <button onClick={disconnectWallet}>Disconnect Wallet</button>
+    <div className="flex items-center transition-all">
+      {account ? (
+        <div className='transition-all'>
+          <WalletBalance provider={provider} account={account} />
+          <span className="font-bold text-black mr-4 mb-4">Wallet: {account.substring(0, 6)}...{account.substring(account.length - 4)}</span>
+          <button onClick={disconnectWallet} className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-lg hover:shadow-2xl hover:bg-red-700 transition-all">
+            Disconnect
+          </button>
         </div>
+      ) : (
+        <button onClick={connectWallet} className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:shadow-2xl hover:bg-blue-700 transition-all">
+          Connect Wallet
+        </button>
       )}
     </div>
   );

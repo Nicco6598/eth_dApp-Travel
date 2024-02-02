@@ -3,10 +3,10 @@ import ConnectWalletButton from './ConnectWalletButton';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 p-4 text-white">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <img src="/path-to-your-logo.png" alt="Logo" className="h-8 mr-2" />
+    <nav className="w-full sticky top-0 z-10 bg-neutral-300 rounded-lg shadow-lg">
+      <div className="container mx-auto flex justify-between items-center p-4">
+        <div>
+          <img src="/logo.png" alt="Logo" className="h-8" /> {/* Sostituisci '/logo.png' con il percorso al tuo logo */}
         </div>
         <ConnectWalletButton />
       </div>
