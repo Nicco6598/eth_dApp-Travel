@@ -23,9 +23,9 @@ const WalletBalance = ({ provider, account }) => {
   return (
     <div>
       {account && (
-        <div className="bg-blue-700 text-white py-2 px-4 rounded-lg shadow-2xl transition-all font-semibold mb-4 mt-4 p-4 rounded-lg transition-all">
-          <h3 className="text-sm mb-2">Saldo del Wallet:</h3>
-          <p className="text-lg">{balance} ETH</p>
+        <div className="bg-blue-700 text-white text-center py-2 px-4 rounded-lg shadow-2xl transition-all font-semibold mb-4 mt-4 p-4 rounded-lg transition-all">
+          <h3 className="text-lg text-bold mb-2">SALDO DEL WALLET:</h3>
+          <p className="text-l">{balance} ETH</p>
         </div>
       )}
     </div>

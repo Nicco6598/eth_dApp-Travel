@@ -1,6 +1,6 @@
 {
   "name": "eth_dApp-Travel",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@types/react": "18.2.51",
