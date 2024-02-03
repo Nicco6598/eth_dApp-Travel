@@ -1,5 +1,3 @@
-// ProductItem.tsx (o .jsx)
-
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import './ProductSaleABI.json'; // Assicurati che il percorso sia corretto
@@ -10,9 +8,11 @@ const ProductItem = ({ product, provider }) => {
     const [txCompleted, setTxCompleted] = useState(false);
     const { abi } = require('./ProductSaleABI.json');
     
+    
     const buyProduct = async () => {
         if (!provider) {
             console.error("Wallet non connesso!");
+            console.log("Provider:", provider);
             return;
         }
 
@@ -41,6 +41,7 @@ const ProductItem = ({ product, provider }) => {
             console.error("Errore nell'acquisto del prodotto:", error);
         }
     };
+
     return (
         <div className="mt-20 hover:scale-105 w-fit transition duration-300 ease-in-out transform lg:flex rounded-3xl shadow-[0px_15px_25px_15px_#cbd5e0] hover:shadow-[0px_10px_15px_5px_#a0aec0] mr-12 ml-12 ">
             <div className="h-48 lg:w-48 object-contain flex-none bg-cover rounded-3xl text-center overflow-hidden" style={{ backgroundImage: `url(${product.imageUrl})` }} title={product.name}>

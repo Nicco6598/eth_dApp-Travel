@@ -26,8 +26,8 @@ const ConnectWalletButton = () => {
       );
       const userAccount = await connectedProvider.getSigner().getAddress();
 
-      // Imposta il provider e l'account nello stato
       setProvider(connectedProvider);
+      console.log("Provider impostato:", connectedProvider);
       setAccount(userAccount);
 
       // Ascolta l'evento di disconnessione
