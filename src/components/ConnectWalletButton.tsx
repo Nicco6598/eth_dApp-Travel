@@ -56,14 +56,14 @@ const ConnectWalletButton = () => {
     <div className="flex items-center transition-all">
       {account ? (
         <div className='transition-all'>
-          <WalletBalance provider={provider} account={account} />
+          <WalletBalance provider={provider} account={account}/>
           <span className="font-bold text-black mr-4 mb-4">Wallet: {account.substring(0, 6)}...{account.substring(account.length - 4)}</span>
-          <button onClick={disconnectWallet} className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-lg hover:shadow-2xl hover:bg-red-700 transition-all">
+          <button onClick={disconnectWallet} className="bg-red-600 text-white py-2 px-4 rounded-lg shadow-lg hover:shadow-2xl hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105">
             Disconnect
           </button>
         </div>
       ) : (
-        <button onClick={connectWallet} className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:shadow-2xl hover:bg-blue-700 transition-all">
+        <button onClick={connectWallet} className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:shadow-2xl hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105">
           Connect Wallet
         </button>
       )}

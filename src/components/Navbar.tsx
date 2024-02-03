@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="w-full sticky top-0 z-10 bg-neutral-300 rounded-lg shadow-lg">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div>
-          <img src="/logo.png" alt="Logo" className="h-8" /> {/* Sostituisci '/logo.png' con il percorso al tuo logo */}
+          <img src="/logo.png" alt="Logo" className="h-16" />
         </div>
         <ConnectWalletButton />
       </div>
