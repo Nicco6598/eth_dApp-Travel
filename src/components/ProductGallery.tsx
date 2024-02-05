@@ -1,5 +1,9 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import Web3Modal from 'web3modal';
+import { ethers } from 'ethers';
+import '../../src/style.css';
 import ProductItem from './ProductItem';
+
 
 const products = [
   {

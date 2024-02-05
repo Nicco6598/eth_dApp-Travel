@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
+import ProductGallery from './ProductGallery';
 
 const WalletBalance = ({ provider, account }) => {
   const [balance, setBalance] = useState('');
@@ -25,7 +26,7 @@ const WalletBalance = ({ provider, account }) => {
     <div>
       {account && (
         <div className="bg-purple-600 text-white text-center py-2 px-4 rounded-lg shadow-2xl transition-all mr-8 p-4 rounded-lg transition-all">
-          <p className="text-sm flex font-semibold justify-between items-center">SALDO DEL WALLET: {balance} ETH </p>
+          <p className="text-sm flex font-semibold justify-between items-center">SALDO DEL WALLET: {balance} ETH </p>       
         </div>
       )}
     </div>

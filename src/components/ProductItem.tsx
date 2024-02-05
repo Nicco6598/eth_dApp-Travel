@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
-import './ProductSaleABI.json'; // Assicurati che il percorso sia corretto
+import ContractABI from './ProductSaleABI';
 
 const ProductItem = ({ product, provider }) => {
     const contractAddress = '0xFA73c7c78392655ABa60FBFC004f31688a06Ef60';
     const [txHash, setTxHash] = useState('');
     const [txCompleted, setTxCompleted] = useState(false);
-    const { abi } = require('./ProductSaleABI.json');
     
     
     const buyProduct = async () => {
@@ -28,7 +27,7 @@ const ProductItem = ({ product, provider }) => {
         setTxCompleted(false);
 
         const signer = provider.getSigner();
-        const contract = new ethers.Contract(contractAddress, abi , provider);
+        const contract = new ethers.Contract(contractAddress, ContractABI, provider);
 
         try {
             const tx = await contract.buyProduct({ value: ethers.utils.parseEther(product.price) });
