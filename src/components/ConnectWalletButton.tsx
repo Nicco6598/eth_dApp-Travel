@@ -9,7 +9,7 @@ const providerOptions = {
 };
 
 const web3Modal = new Web3Modal({
-  network: 'mainnet', // cambierai dinamicamente tra mainnet e sepolia
+  network: 'sepolia', // cambierai dinamicamente tra mainnet e sepolia
   cacheProvider: true, // se vero, web3modal ricorderà quale provider è stato selezionato
   providerOptions, // provider options
 });
@@ -21,13 +21,11 @@ const ConnectWalletButton = () => {
   const connectWallet = async () => {
     try {
       const modalProvider = await web3Modal.connect();
-      const connectedProvider = new ethers.providers.Web3Provider(
-        modalProvider
-      );
+      const connectedProvider = new ethers.providers.Web3Provider(window.ethereum);
+      console.log("Provider in ConnectWalletButton:", connectedProvider);
       const userAccount = await connectedProvider.getSigner().getAddress();
 
       setProvider(connectedProvider);
-      console.log("Provider impostato:", connectedProvider);
       setAccount(userAccount);
 
       // Ascolta l'evento di disconnessione

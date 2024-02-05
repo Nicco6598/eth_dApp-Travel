@@ -12,7 +12,7 @@ const ProductItem = ({ product, provider }) => {
     const buyProduct = async () => {
         if (!provider) {
             console.error("Wallet non connesso!");
-            console.log("Provider:", provider);
+            console.log("Provider in ProductItem:", provider);
             return;
         }
 

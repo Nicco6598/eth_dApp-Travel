@@ -10,6 +10,7 @@ const WalletBalance = ({ provider, account }) => {
         const balanceBigInt = await provider.getBalance(account);
         const balanceInEth = parseFloat(ethers.utils.formatEther(balanceBigInt)).toFixed(5);
         setBalance(balanceInEth);
+        console.log("Provider in WalletBalance:", provider);
       }
     } catch (error) {
       console.error("Errore nel recuperare il saldo:", error);
