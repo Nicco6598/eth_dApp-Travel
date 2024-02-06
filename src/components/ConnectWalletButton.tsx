@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
-import '../../src/style.css';
 import WalletBalance from './WalletBalance';
 import { ProviderContext } from './ProviderContext';
 
