@@ -9,8 +9,8 @@ const initialProducts = [
       name: 'Viaggio alle Maldive',
       description: 'Esperienza indimenticabile nelle splendide isole delle Maldive.',
       imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Immagine casuale da Unsplash
-      price: '0.01', // Prezzo in ETH
-      available: 1
+      price: '1.3', // Prezzo in ETH
+      available: 10
     },
     {
       id: 2,
@@ -35,6 +35,14 @@ const initialProducts = [
       imageUrl: 'https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Immagine casuale da Unsplash
       price: '3.55', // Prezzo in ETH
       available: 2
+    },
+    {
+      id: 5,
+      name: 'Test',
+      description: 'TEST TEST TEST',
+      imageUrl: 'https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Immagine casuale da Unsplash
+      price: '0.001', // Prezzo in ETH
+      available: 1
     }
 ];
   const ProductGallery = () => {

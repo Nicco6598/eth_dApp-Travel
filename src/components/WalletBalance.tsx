@@ -23,8 +23,15 @@ const WalletBalance = ({ account }) => {
   return (
     <div>
       {account && (
-        <div className="bg-purple-600 text-white text-center py-2 px-4 rounded-lg shadow-2xl transition-all mr-8 p-4 rounded-lg transition-all">
-          <p className="text-sm flex font-semibold justify-between items-center">SALDO DEL WALLET: {balance} ETH </p>       
+        <div className="bg-neutral-200 text-white text-center py-2 px-4 rounded-xl transition-all lg:ml-4 ">
+          <p className="text-sm sm:flex sm:justify-between sm:items-center">
+            <span className="font-bold text-sm text-gray-900 sm:inline hidden">
+              {balance} ETH
+            </span>
+          </p>
+          <p className="font-bold text-sm text-gray-900 sm:hidden text-xs">
+            {balance} ETH
+          </p>
         </div>
       )}
     </div>

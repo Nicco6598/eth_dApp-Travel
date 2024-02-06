@@ -50,11 +50,10 @@ const ConnectWalletButton = () => {
 
   return (
     <div className="flex items-center transition-all">
-      <WalletBalance account={account}/>
       {account ? (
         <div className='transition-all'>
-          <button onClick={disconnectWallet} className="bg-red-500 text-sm flex font-bold justify-between items-center text-white text-center py-2 px-4 rounded-2xl shadow-lg hover:shadow-2xl hover:bg-red-600 transition-all duration-300 ease-in-out transform hover:scale-105">
-            WALLET: {account.substring(0, 6)}..{account.substring(account.length - 4)}
+          <button onClick={disconnectWallet} className="bg-sky-500 auto text-sm flex ml-16 font-bold justify-between items-center text-white text-center py-2 px-4 rounded-2xl shadow-lg hover:shadow-2xl hover:bg-red-600 transition-all duration-300 ease-in-out transform hover:scale-105">
+            WALLET: {account.substring(0, 6)}..{account.substring(account.length - 4)} <WalletBalance account={account}/>
           </button>
         </div>
       ) : (
