@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react'; // Aggiungi useContext
 import { ethers } from 'ethers';
 import ContractABI from './ProductSaleABI';
+import { ProviderContext } from './ProviderContext'; // Importa ProviderContext
 
-const ProductItem = ({ product, provider }) => {
+const ProductItem = ({ product }) => {
+    const { provider } = useContext(ProviderContext); // Utilizza useContext per ottenere il provider
     const contractAddress = '0xFA73c7c78392655ABa60FBFC004f31688a06Ef60';
     const [txHash, setTxHash] = useState('');
     const [txCompleted, setTxCompleted] = useState(false);
-    
     
     const buyProduct = async () => {
         if (!provider) {
@@ -15,19 +16,19 @@ const ProductItem = ({ product, provider }) => {
             return;
         }
 
-    const network = await provider.getNetwork();
-    console.log("Connesso alla rete:", network);
+        const network = await provider.getNetwork();
+        console.log("Connesso alla rete:", network);
 
-    if (network.chainId !== 11155111) { // Chain ID per Sepolia Testnet
-        console.error("Non sei sulla rete Sepolia Testnet!");
-        return;
-    }
+        if (network.chainId !== 11155111) { // Chain ID per Sepolia Testnet
+            console.error("Non sei sulla rete Sepolia Testnet!");
+            return;
+        }
 
         setTxHash('');
         setTxCompleted(false);
 
         const signer = provider.getSigner();
-        const contract = new ethers.Contract(contractAddress, ContractABI, provider);
+        const contract = new ethers.Contract(contractAddress, ContractABI, signer);
 
         try {
             const tx = await contract.buyProduct({ value: ethers.utils.parseEther(product.price) });

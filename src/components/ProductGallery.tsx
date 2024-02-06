@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Web3Modal from 'web3modal';
-import { ethers } from 'ethers';
+import React, { useContext } from 'react'; // Aggiungi useContext
 import '../../src/style.css';
 import ProductItem from './ProductItem';
+import { ProviderContext } from './ProviderContext';
 
 
 const products = [
@@ -11,7 +10,7 @@ const products = [
     name: 'Viaggio alle Maldive',
     description: 'Esperienza indimenticabile nelle splendide isole delle Maldive.',
     imageUrl: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Immagine casuale da Unsplash
-    price: '0.8' // Prezzo in ETH
+    price: '0.01' // Prezzo in ETH
   },
   {
     id: 2,
@@ -36,15 +35,17 @@ const products = [
   }
 ];
 
-const ProductGallery = ({ provider }) => {
+const ProductGallery = () => {
+  const { provider } = useContext(ProviderContext); 
+
   return (
     <div>
-        <h2 className="text-3xl font-bold my-4 mt-24 text-center">VIAGGI DISPONIBILI</h2>
-    <div className="grid grid-cols-2 grid-rows-3 lg:grid-cols-3 gap-2 lg:gap-5">
-      {products.map(product => (
-        <ProductItem key={product.id} product={product} provider={provider}/>
-      ))}
-    </div>
+      <h2 className="text-3xl font-bold my-4 mt-24 text-center">VIAGGI DISPONIBILI</h2>
+      <div className="grid grid-cols-2 grid-rows-3 lg:grid-cols-3 gap-2 lg:gap-5">
+        {products.map(product => (
+          <ProductItem key={product.id} product={product}/> 
+        ))}
+      </div>
     </div>
   );
 };

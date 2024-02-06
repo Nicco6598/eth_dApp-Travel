@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ethers } from 'ethers';
 import ProductGallery from './ProductGallery';
+import { ProviderContext } from './ProviderContext'; // Import solo ProviderContext, ProviderProvider non è necessario qui
 
-const WalletBalance = ({ provider, account }) => {
+const WalletBalance = ({ account }) => {
+  const { provider } = useContext(ProviderContext); // Destruttura per ottenere solo la proprietà provider
   const [balance, setBalance] = useState('');
 
   const getBalance = async () => {
-    try {
-      if (provider && account) {
-        const balanceBigInt = await provider.getBalance(account);
-        const balanceInEth = parseFloat(ethers.utils.formatEther(balanceBigInt)).toFixed(5);
-        setBalance(balanceInEth);
-        console.log("Provider in WalletBalance:", provider);
-      }
-    } catch (error) {
-      console.error("Errore nel recuperare il saldo:", error);
+    if (provider && account) {
+      // Accedi correttamente al provider per chiamare getBalance
+      const balanceBigInt = await provider.getBalance(account);
+      const balanceInEth = parseFloat(ethers.utils.formatEther(balanceBigInt)).toFixed(5);
+      setBalance(balanceInEth);
     }
   };
 
   useEffect(() => {
     getBalance();
-  }, [provider, account]); // Ricalcola il saldo quando cambiano il provider o l'account
+  }, [provider, account]);
 
   return (
     <div>
@@ -34,4 +32,5 @@ const WalletBalance = ({ provider, account }) => {
 };
 
 export default WalletBalance;
+
 

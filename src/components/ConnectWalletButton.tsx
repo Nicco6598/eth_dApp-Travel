@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 import '../../src/style.css';
 import WalletBalance from './WalletBalance';
+import { ProviderContext } from './ProviderContext';
 
 const providerOptions = {
   /* qui puoi inserire altri provider se necessario */
@@ -15,13 +16,13 @@ const web3Modal = new Web3Modal({
 });
 
 const ConnectWalletButton = () => {
-  const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState('');
+  const { provider, setProvider } = useContext(ProviderContext);
 
   const connectWallet = async () => {
     try {
       const modalProvider = await web3Modal.connect();
-      const connectedProvider = new ethers.providers.Web3Provider(window.ethereum);
+      const connectedProvider = new ethers.providers.Web3Provider(modalProvider);
       console.log("Provider in ConnectWalletButton:", connectedProvider);
       const userAccount = await connectedProvider.getSigner().getAddress();
 
@@ -39,9 +40,6 @@ const ConnectWalletButton = () => {
 
   const disconnectWallet = async () => {
     await web3Modal.clearCachedProvider();
-    if (provider?.disconnect && typeof provider.disconnect === 'function') {
-      await provider.disconnect();
-    }
     resetApp();
   };
 
@@ -52,7 +50,7 @@ const ConnectWalletButton = () => {
 
   return (
     <div className="flex items-center transition-all">
-            <WalletBalance provider={provider} account={account}/>
+      <WalletBalance account={account}/>
       {account ? (
         <div className='transition-all'>
           <button onClick={disconnectWallet} className="bg-red-500 text-sm flex font-bold justify-between items-center text-white text-center py-2 px-4 rounded-lg shadow-lg hover:shadow-2xl hover:bg-red-600 transition-all duration-300 ease-in-out transform hover:scale-105">
