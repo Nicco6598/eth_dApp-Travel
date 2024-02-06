@@ -78,10 +78,10 @@ const ProductItem = ({ product, onPurchase }) => {
   };
 
   return (
-    <div className="mt-20 hover:scale-105 w-fit transition duration-300 ease-in-out transform lg:flex rounded-3xl shadow-[0px_15px_25px_15px_#cbd5e0] hover:shadow-[0px_10px_15px_5px_#a0aec0] mr-12 ml-12 ">
-      <div className="h-auto lg:w-48 object-contain flex-none bg-cover rounded-3xl text-center overflow-hidden" style={{ backgroundImage: `url(${product.imageUrl})` }} title={product.name}>
+    <div className="mt-5 lg:mt-20 hover:scale-105 w-full lg:w-fit transition duration-300 ease-in-out transform flex flex-col lg:flex-row rounded-3xl shadow-[0px_15px_25px_15px_#cbd5e0] hover:shadow-[0px_10px_15px_5px_#a0aec0] mx-4 lg:mx-12 ">
+      <div className="h-48 lg:h-auto lg:w-48 object-cover flex-none bg-cover rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none text-center overflow-hidden" style={{ backgroundImage: `url(${product.imageUrl})` }} title={product.name}>
       </div>
-      <div className="bg-gray rounded-b p-4 flex flex-col justify-between leading-normal">
+      <div className="bg-gray rounded-b lg:rounded-b-none lg:rounded-r-3xl p-4 flex flex-col justify-between leading-normal">
         <div className="mb-8">
           <div className="text-gray-900 font-bold text-xl mb-2">{product.name}</div>
           <p className="text-gray-700 text-base">{product.description}</p>
@@ -89,7 +89,7 @@ const ProductItem = ({ product, onPurchase }) => {
           <p className="text-gray-700 font-bold text-base">Disponibili: {product.available}</p>
         </div>
         <div className="flex items-center justify-between">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xl font-bold text-black-700">{product.price} ETH</span>
+          <span className="inline-block px-3 py-1 text-sm lg:text-xl font-bold text-black-700">{product.price} ETH</span>
           {product.available > 0 ? (
             <button onClick={buyProduct} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
               Acquista
