@@ -78,7 +78,7 @@ const ProductItem = ({ product, onPurchase }) => {
   };
 
   return (
-    <div className="mt-5 lg:mt-20 hover:scale-105 w-full lg:w-fit transition duration-300 ease-in-out transform flex flex-col lg:flex-row rounded-3xl shadow-[0px_15px_25px_15px_#cbd5e0] hover:shadow-[0px_10px_15px_5px_#a0aec0] mx-4 lg:mx-12 ">
+    <div className="mt-5 lg:mt-20 hover:scale-105 w-full lg:w-fit transition duration-300 ease-in-out transform flex flex-col lg:flex-row rounded-3xl shadow-[0px_15px_25px_15px_#cbd5e0] hover:shadow-[0px_10px_15px_5px_#a0aec0] ">
       <div className="h-48 lg:h-auto lg:w-48 object-cover flex-none bg-cover rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none text-center overflow-hidden" style={{ backgroundImage: `url(${product.imageUrl})` }} title={product.name}>
       </div>
       <div className="bg-gray rounded-b lg:rounded-b-none lg:rounded-r-3xl p-4 flex flex-col justify-between leading-normal">

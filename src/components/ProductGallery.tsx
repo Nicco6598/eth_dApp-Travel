@@ -50,9 +50,9 @@ const initialProducts = [
     };
 
     return (
-      <div>
-        <h2 className="text-3xl font-bold my-4 mt-24 text-center">VIAGGI DISPONIBILI</h2>
-        <div className="grid grid-cols-2 grid-rows-3 lg:grid-cols-3 gap-2 lg:gap-5">
+      <div className='container mx-auto px-4 '>
+        <h2 className="text-3xl font-bold mt-24 mb-8 lg:mb-0 text-center">VIAGGI DISPONIBILI</h2>
+        <div className="grid grid-cols-1 justify-items-center grid-rows-4 gap-16 lg:grid-cols-3 lg:gap-20">
           {products.map(product => (
             <ProductItem key={product.id} product={product} onPurchase={handlePurchase} />
           ))}
