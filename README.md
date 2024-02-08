@@ -63,6 +63,15 @@ Per offrirti una migliore comprensione di come funziona la nostra dApp, ecco alc
 Il nostro progetto è ospitato su Vercel, garantendo aggiornamenti automatici ad ogni commit sulla repository. 
 Puoi visualizzare il sito live e accedere al codice sorgente tramite il link presente in alto a destra della nostra repository GitHub.
 
+## Clone
+
+**Clona la Repository**:
+   Per iniziare a lavorare con dApp Travel, clona prima la repository sul tuo computer locale utilizzando il comando:
+
+   ```bash
+   git clone https://github.com/Nicco6598/eth_dApp-Travel.git
+   ```
+
 ## Smart Contract
 
 Lo smart contract è deployato all'indirizzo `0xC598C2A23076De237B489426363C10cf388EeaB7` sulla rete di test Sepolia.
