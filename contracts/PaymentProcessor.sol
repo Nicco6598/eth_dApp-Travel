@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract ProductSale {
     address payable public owner;
-    address payable private recipient; // Aggiungi questa riga
+    address payable private recipient;
 
     event Purchase(address indexed buyer, uint256 amount);
 
