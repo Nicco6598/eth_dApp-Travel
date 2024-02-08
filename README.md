@@ -74,7 +74,7 @@ Puoi visualizzare il sito live e accedere al codice sorgente tramite il link pre
 
 ## Smart Contract
 
-Lo smart contract è deployato all'indirizzo `0xC598C2A23076De237B489426363C10cf388EeaB7` sulla rete di test Sepolia.
+Lo smart contract è deployato all'indirizzo `[0xC598C2A23076De237B489426363C10cf388EeaB7]`(https://sepolia.etherscan.io/address/0xC598C2A23076De237B489426363C10cf388EeaB7) sulla rete di test Sepolia.
 Durante il deploy, è stato configurato per inviare tutti i pagamenti all'indirizzo `0x2F566EafA151EaA0bE17C3bDeb901900A4b77fD4`, è possibile cambiarlo per il vostro progetto clonato facendo di nuovo il deploy del contratto con RedHat o su Remix IDE, scegliendo un nuovo recipient al momento del deploy.
 
 ## Licenza
