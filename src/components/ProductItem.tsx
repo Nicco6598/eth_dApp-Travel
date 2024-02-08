@@ -5,7 +5,7 @@ import { ProviderContext } from './ProviderContext';
 
 const ProductItem = ({ product, onPurchase }) => {
   const { provider } = useContext(ProviderContext);
-  const contractAddress = '0xFA73c7c78392655ABa60FBFC004f31688a06Ef60';
+  const contractAddress = '0xC598C2A23076De237B489426363C10cf388EeaB7';
   const [txHash, setTxHash] = useState('');
   const [txCompleted, setTxCompleted] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -84,18 +84,18 @@ const ProductItem = ({ product, onPurchase }) => {
       <div className="bg-gray rounded-b lg:rounded-b-none lg:rounded-r-3xl p-4 flex flex-col justify-between leading-normal">
         <div className="mb-8">
           <div className="text-gray-900 font-bold text-xl mb-2">{product.name}</div>
-          <p className="text-gray-700 text-base">{product.description}</p>
-          <p> ---------------  </p>
-          <p className="text-gray-700 font-bold text-base">Disponibili: {product.available}</p>
+          <p className="text-gray-900 text-base">{product.description}</p>
+          <p> - </p>
+          <p className="text-blue-700 font-bold text-base">Disponibili: {product.available}</p>
         </div>
         <div className="flex items-center justify-between">
-          <span className="inline-block px-3 py-1 text-sm lg:text-xl font-bold text-black-700">{product.price} ETH</span>
+          <span className="inline-block px-3 py-1 text-sm lg:text-xl rounded-2xl font-bold text-black-700">{product.price} ETH</span>
           {product.available > 0 ? (
-            <button onClick={buyProduct} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <button onClick={buyProduct} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl transition duration-300 ease-in-out transform hover:scale-110">
               Acquista
             </button>
           ) : (
-            <button disabled className="bg-blue-500 text-white font-bold py-2 px-4 rounded-2xl opacity-50 cursor-not-allowed">
+            <button disabled className="bg-red-500 text-white font-bold py-2 px-4 rounded-2xl opacity-50 cursor-not-allowed">
               Esaurito
             </button>
           )}

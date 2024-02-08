@@ -58,15 +58,15 @@ const initialProducts = [
     };
 
     return (
-      <div className='container mx-auto px-4 '>
-        <h2 className="text-3xl font-bold mt-24 mb-8 lg:mb-0 text-center">VIAGGI DISPONIBILI</h2>
+      <div className='container mx-auto px-4'>
+        <h2 className="text-3xl font-bold mt-16 mb-12 lg:mb-8 text-center text-gray-900">Scopri i nostri Viaggi</h2>
         <div className="grid grid-cols-1 justify-items-center grid-rows-2 gap-16 lg:grid-cols-3 lg:gap-20">
           {products.map(product => (
             <ProductItem key={product.id} product={product} onPurchase={handlePurchase} />
           ))}
         </div>
       </div>
-    );
+    );    
   };
 
   export default ProductGallery;
